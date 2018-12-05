@@ -1,0 +1,1 @@
+# ionic_fav_quotes
