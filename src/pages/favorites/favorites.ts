@@ -25,5 +25,16 @@ export class FavoritesPage {
   onViewQuote(quote: Quote){
     const modal = this.modalCtrl.create(QuotePage, quote);
     modal.present();
+    modal.onDidDismiss((remove: boolean) => {
+      if(remove){
+        this.quoteService.removeQuoteFromFavorites(quote);
+        const position = this.quotes.findIndex((quoteEl: Quote) => {
+          return quoteEl.id == quote.id;
+        });
+        this.quotes.splice(position, 1);  
+      }
+      
+    });
+   
   }
 }
