@@ -43,7 +43,7 @@ export class QuotesPage implements OnInit {
           },
         },
         {
-          text: 'No, I changes my mind!',
+          text: 'No, I changed my mind!',
           role: 'cancel',
           handler: () =>{
             console.log('Cancel');
